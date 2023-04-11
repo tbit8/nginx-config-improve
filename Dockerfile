@@ -13,12 +13,6 @@ COPY . /app
 
 RUN sh -c "wget http://getcomposer.org/composer.phar && chmod a+x composer.phar && mv composer.phar /usr/local/bin/composer"
 
-
-RUN cd /app && \
-    /usr/local/bin/composer install
-    # && \
-    # /usr/local/bin/composer dump-autoload
-
 WORKDIR /app
  
 # Make the file executable, or use "chmod 777" instead of "chmod +x"
