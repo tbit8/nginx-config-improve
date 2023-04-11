@@ -20,6 +20,7 @@ WORKDIR /app
 RUN chmod +x /app/run.sh
 
 RUN chown -R www-data: /app
+RUN chown -R www-data: /app/public
 
 # This will run the shell file at the time when container is up-and-running successfully (and NOT at the BUILD time)
 ENTRYPOINT ["/app/run.sh"]
