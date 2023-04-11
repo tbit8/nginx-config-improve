@@ -1,4 +1,7 @@
 <?php
+// Start the session to store the logged in status
+session_start();
+
 // Define the hardcoded username and password
 $username = 'test@test.com';
 $password = 'testing';
@@ -14,6 +17,9 @@ if (isset($_POST['submit'])) {
 
     // Validate the username and password
     if ($submittedUsername === $username && $submittedPassword === $password) {
+        // Set the logged in status to true
+        $_SESSION['loggedIn'] = true;
+
         // Redirect to the dashboard page
         header('Location: dashboard.php');
         exit();
